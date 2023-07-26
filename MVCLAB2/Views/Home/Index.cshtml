@@ -1,0 +1,127 @@
+﻿@model List<Instructor>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: url('https://images.pexels.com/photos/16979580/pexels-photo-16979580/free-photo-of-wood-summer-wall-garden.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+            .hero h1 {
+                font-size: 48px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+        .featured-content {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+            .featured-content h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .featured-content p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container text-center">
+            <h1>Welcome to Our Website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a asp-action="index" asp-controller="Home" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </section>
+    <section class="featured-content">
+        <div class="container">
+            <h2>Featured Courses</h2>
+            <p>Explore our popular courses taught by industry experts.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Web Development</h3>
+                    <p>Learn the fundamentals of web development, including HTML, CSS, and JavaScript.</p>
+                    <a asp-controller="Course" asp-action="index" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Data Science</h3>
+                    <p>Discover the power of data analysis and learn how to extract insights from large datasets.</p>
+                    <a asp-controller="Course" asp-action="index" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Graphic Design</h3>
+                    <p>Unleash your creativity with our graphic design courses and learn to create stunning visuals.</p>
+                    <a asp-controller="Course" asp-action="index" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+<section class="instructors">
+    <div class="container">
+        <h2>Our Instructors</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/images/m1.jpg" class="card-img-top" alt="Instructor 1">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Department: Web Development</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/images/m2.jpg" class="card-img-top" alt="Instructor 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Jane Smith</h5>
+                        <p class="card-text">Department: Data Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/images/w.jpg" class="card-img-top" alt="Instructor 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mona</h5>
+                        <p class="card-text">Department: Graphic Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

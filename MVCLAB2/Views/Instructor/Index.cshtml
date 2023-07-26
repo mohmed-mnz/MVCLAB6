@@ -1,0 +1,73 @@
+﻿@model List<Instructor>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .table-image {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .action-buttons a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/Instructor/search" class="text-center mb-3">
+            <div class="input-group">
+                <input type="text" name="Name" id="Name" class="form-control" placeholder="Search">
+                <button type="submit" class="btn btn-outline-success">Search</button>
+            </div>
+        </form>
+        <h1 class="text-center">Instructors</h1>
+        <a href="/instructor/new" class="btn btn-outline-danger mb-3">New Instructor</a>
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <th scope="row">@i.Id</th>
+                        <td>@i.Name</td>
+                        <td>@i.Salary</td>
+                        <td>@i.Address</td>
+                        <td><img src="~/images/@i.image" class="table-image" /></td>
+                        <td class="action-buttons">
+                            <a href="/instructor/detail/@i.Id" class="btn btn-outline-success">More Details</a>
+                            <a href="/instructor/edit/@i.Id" class="btn btn-outline-warning">Edit</a>
+                            <a href="/instructor/delete/@i.Id" class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

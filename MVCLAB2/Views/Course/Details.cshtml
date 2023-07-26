@@ -1,0 +1,26 @@
+﻿@model crsDept 
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Course Details</h1>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Name: @Model.Crsname</h5>
+                <p class="card-text">Degree: @Model.Crsdergree</p>
+                <p class="card-text">MinDegree: @Model.CrsMindergree</p>
+                <p class="card-text">Department: @Model.CrsDept</p>
+                <a asp-action="index" asp-controller="course" class="btn btn-primary">Show All Courses</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
